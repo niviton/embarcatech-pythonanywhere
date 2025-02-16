@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Reservatório</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #555;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Informações do Reservatório</h1>
+        <p>Data e Hora: <span class="highlight">{{ data_hora }}</span></p>
+        <p>Capacidade total do reservatório: <span class="highlight">{{ capacidade_total }} litros</span></p>
+        <p>Litros restantes no reservatório: <span class="highlight">{{ litros_restantes }} litros</span></p>
+        <p>Porcentagem de água no reservatório: <span class="highlight">{{ porcentagem_agua }}%</span></p>
+        <p>Umidade: <span class="highlight">{{ umidade }}%</span></p>
+        <p>Distância da água: <span class="highlight">{{ distancia_agua }} cm</span></p>
+        <p>Vazão da água: <span class="highlight">{{ vazao_agua }} L/s</span></p>
+        <p>Irrigações restantes: <span class="highlight">{{ irrigacoes_restantes }}</span></p>
+        <p>Estado: <span class="highlight">{{ estado }}</span></p>
+    </div>
+</body>
+</html>
