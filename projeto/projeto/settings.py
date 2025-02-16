@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5ab16jn)%48ena64hi-31qe88k41c37+@+r*(y&$psm6=ofufc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['niviton.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
