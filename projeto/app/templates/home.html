@@ -11,10 +11,9 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             height: 100vh;
-            padding: 20px;
         }
         .container {
             background-color: #fff;
@@ -23,7 +22,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
-            text-align: center;
         }
         h1 {
             font-size: 24px;
@@ -39,60 +37,19 @@
             font-weight: bold;
             color: #000;
         }
-        .reservatorio {
-            position: relative;
-            width: 100px;
-            height: 200px;
-            border: 3px solid #000;
-            background-color: #ccc;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-        .agua {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background-color: #00f;
-            transition: height 0.5s ease-in-out;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Informações do Reservatório</h1>
-        <p>Data e Hora: <span class="highlight" id="data_hora"></span></p>
-        <p>Capacidade total do reservatório: <span class="highlight" id="capacidade_total"></span> litros</p>
-        <p>Litros restantes no reservatório: <span class="highlight" id="litros_restantes"></span> litros</p>
-        <p>Porcentagem de água no reservatório: <span class="highlight" id="porcentagem_agua"></span>%</p>
-        <p>Umidade: <span class="highlight" id="umidade"></span></p>
-        <p>Distância da água: <span class="highlight" id="distancia_agua"></span> cm</p>
-        <p>Vazão da água: <span class="highlight" id="vazao_agua"></span> L/s</p>
-        <p>Irrigações restantes: <span class="highlight" id="irrigacoes_restantes"></span></p>
-        <p>Estado: <span class="highlight" id="estado"></span></p>
+        <p>Data e Hora: <span class="highlight">{{ data_hora }}</span></p>
+        <p>Capacidade total do reservatório: <span class="highlight">{{ capacidade_total }} litros</span></p>
+        <p>Litros restantes no reservatório: <span class="highlight">{{ litros_restantes }} litros</span></p>
+        <p>Porcentagem de água no reservatório: <span class="highlight">{{ porcentagem_agua }}%</span></p>
+        <p>Umidade: <span class="highlight">{{ umidade }}</span></p>
+        <p>Distância da água: <span class="highlight">{{ distancia_agua }} cm</span></p>
+        <p>Vazão da água: <span class="highlight">{{ vazao_agua }} L/s</span></p>
+        <p>Irrigações restantes: <span class="highlight">{{ irrigacoes_restantes }}</span></p>
+        <p>Estado: <span class="highlight">{{ estado }}</span></p>
     </div>
-    
-    <div class="reservatorio">
-        <div class="agua" id="agua"></div>
-    </div>
-    
-    <script>
-        function atualizarDados(capacidadeTotal, litrosRestantes, umidade, distanciaAgua, vazaoAgua, irrigacoesRestantes, estado) {
-            const porcentagemAgua = ((litrosRestantes / capacidadeTotal) * 100).toFixed(2);
-
-            document.getElementById("data_hora").textContent = new Date().toLocaleString();
-            document.getElementById("capacidade_total").textContent = capacidadeTotal;
-            document.getElementById("litros_restantes").textContent = litrosRestantes;
-            document.getElementById("porcentagem_agua").textContent = porcentagemAgua;
-            document.getElementById("umidade").textContent = umidade;
-            document.getElementById("distancia_agua").textContent = distanciaAgua;
-            document.getElementById("vazao_agua").textContent = vazaoAgua;
-            document.getElementById("irrigacoes_restantes").textContent = irrigacoesRestantes;
-            document.getElementById("estado").textContent = estado;
-
-            const agua = document.getElementById("agua");
-            agua.style.height = porcentagemAgua + "%";
-        }
-    </script>
 </body>
-</html>
